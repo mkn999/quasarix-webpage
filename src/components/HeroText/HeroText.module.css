@@ -1,0 +1,271 @@
+/* Animated text wrapper */
+.heroText {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+
+.content {
+  width: 100%;
+  /* max-width: 950px; */
+  min-width: 0;
+  overflow-wrap: break-word;
+  padding: 12px 4px 16px;
+
+  opacity: 1;
+  transform: translateY(0);
+
+  transition:
+    opacity 0.8s ease-in-out,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.mainmain {
+  display: flex;
+}
+/* Heading utility class */
+.h1 {
+  max-width: 950px;
+  margin: 0 0 20px;
+
+  font-size: clamp(2.5rem, 80px, 100px);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -1.5px;
+
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.h2 {
+  text-align: justify;
+}
+
+/* Small text above the heading */
+.label {
+  display: block;
+  max-width: 430px;
+  margin-bottom: 24px;
+
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0.5px;
+
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Main heading */
+.content h1 {
+  max-width: 600px;
+  margin: 0 0 28px;
+
+  font-size: clamp(2.2rem, 80px, 100px);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -1.5px;
+
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+/* Supporting text */
+.content p {
+  max-width: 430px;
+  margin: 0;
+
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Entire content fades together */
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.fadeOut {
+  opacity: 0;
+  transform: translateY(14px);
+  pointer-events: none;
+}
+.imgg {
+  width: 500px;
+  height: 500px;
+}
+/* Get Started button */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 36px;
+  padding: 14px 22px;
+
+  color: #fff;
+  /* background: #02b4ff; */
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
+  /* border-radius: 5px; */
+
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+
+  box-shadow: 0 0 25px rgba(2, 180, 255, 0.12);
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.4s ease,
+    transform 0.3s ease;
+
+  /* From https://css.glass */
+  background: #0b1a2f;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta span {
+  display: inline-block;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.cta:hover {
+  background: #009de0;
+  box-shadow: 0 0 30px rgba(2, 180, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.cta:hover span {
+  transform: translateX(4px);
+}
+
+.cta:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .label {
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .h1 {
+    font-size: clamp(2.5rem, 7vw, 3.5rem);
+    line-height: 1.08;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+  }
+
+  .content h1 {
+    margin-bottom: 24px;
+  }
+
+  .content p {
+    max-width: 400px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .cta {
+    margin-top: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .label {
+    margin-bottom: 18px;
+    font-size: 0.82rem;
+    line-height: 1.65;
+    letter-spacing: 0.3px;
+  }
+
+  .h1 {
+    font-size: clamp(2.1rem, 8.5vw, 2.8rem);
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+    margin-bottom: 22px;
+  }
+
+  .content h1 {
+    font-size: clamp(2.1rem, 8.5vw, 2.8rem);
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+    margin-bottom: 22px;
+  }
+
+  .content p {
+    max-width: 100%;
+    font-size: 0.82rem;
+    line-height: 1.65;
+  }
+
+  .cta {
+    margin-top: 26px;
+    padding: 13px 18px;
+    font-size: 0.82rem;
+  }
+}
+
+/* Very narrow phones */
+@media (max-width: 360px) {
+  .label {
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+  }
+
+  .h1 {
+    font-size: 2rem;
+    line-height: 1.12;
+    letter-spacing: -0.6px;
+    margin-bottom: 20px;
+  }
+
+  .content h1 {
+    font-size: 2rem;
+    line-height: 1.12;
+    letter-spacing: -0.6px;
+    margin-bottom: 20px;
+  }
+
+  .content p {
+    font-size: 0.8rem;
+  }
+
+  .cta {
+    margin-top: 24px;
+  }
+}
+
+/* Respect accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+  .content,
+  .cta,
+  .cta span {
+    transition: none;
+  }
+
+  .fadeOut {
+    transform: none;
+  }
+
+  .cta:hover {
+    transform: none;
+  }
+}

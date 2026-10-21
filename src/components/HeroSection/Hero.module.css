@@ -1,0 +1,136 @@
+/* Hero section */
+.hero,
+.hero * {
+  box-sizing: border-box;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 560px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+
+  background:
+    radial-gradient(
+      ellipse at 66% 35%,
+      rgba(2, 180, 255, 0.28) 0%,
+      rgba(0, 100, 180, 0.18) 25%,
+      transparent 58%
+    ),
+    #030509;
+}
+
+/* Blue atmospheric glow */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 72% 20%,
+      rgba(2, 180, 255, 0.24),
+      transparent 25%
+    ),
+    radial-gradient(
+      ellipse at 58% 45%,
+      rgba(0, 120, 220, 0.18),
+      transparent 45%
+    );
+
+  filter: blur(35px);
+}
+
+/* Subtle star texture */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.3;
+
+  background-image: radial-gradient(
+    white 0.6px,
+    transparent 0.8px
+  );
+  background-size: 83px 79px;
+}
+
+/* Hero content container */
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 80px 7%;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero {
+    min-height: 500px;
+  }
+
+  .container {
+    padding: 64px 6%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 440px;
+  }
+
+  .container {
+    padding: 56px 6%;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 400px;
+    min-height: 55svh;
+  }
+
+  .container {
+    padding: 44px 22px;
+  }
+
+  .hero::before {
+    inset: -10%;
+    filter: blur(28px);
+  }
+
+  .hero::after {
+    opacity: 0.2;
+    background-size: 65px 65px;
+  }
+}
+
+/* Very narrow phones */
+@media (max-width: 360px) {
+  .hero {
+    min-height: 380px;
+  }
+
+  .container {
+    padding: 36px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    scroll-behavior: auto;
+  }
+}
